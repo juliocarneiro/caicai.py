@@ -27,7 +27,7 @@ def main():
     global port
     global target
 
-    target = str(input("Digite o alvo: "))
+    target = str(input("IP do alvo: "))
     if target == "":
         print("Digite algum valor e tente novamente!")
         exit()
@@ -56,7 +56,7 @@ def main():
         BytesEnc = str.encode(Bytes)
         Sock.sendall(BytesEnc)
 
-        print('Flooding {0} in port {1} with {2} bytes of data'.format(
+        print('Flooding {0} na porta {1} com {2} bytes de dados'.format(
             target, port, sys.getsizeof(BytesEnc)))
         if socket.error:
             Sock.shutdown(socket.SHUT_RDWR)
